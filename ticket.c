@@ -7,7 +7,7 @@
 
 void create_ticket(int index)
 {
-	char* ptr;
+	//char* ptr;
 	struct ticket new_ticket;
 	printf("\n");
 	printf("Enter ticket priority: 1 for Low, 2 for Normal, 3 for High, 4 for Critical.  ");
@@ -58,7 +58,7 @@ void update_ticket()
 	int index=0;
 	bool found=false;
 	//int ptr;
-	char* ptr;
+	//char* ptr;
 	printf("\n");
 	printf("Enter ticket number:  ");
 	ptr = get_input(8);
@@ -130,7 +130,7 @@ void delete_ticket()
 	struct ticket tmp_ticket2 = { 0,0,0,0,0,0 };
 	int index = 0;
 	bool found = false;
-	char* ptr;
+	//char* ptr;
 	printf("\n");
 	printf("Enter ticket number:  ");
 	ptr = get_input(8);

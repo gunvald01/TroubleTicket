@@ -13,6 +13,7 @@ struct ticket
 };
 
 struct ticket tkt_array[NUM_TICKETS] ;
+char* ptr;
 
 void create_ticket(int);
 void update_ticket();

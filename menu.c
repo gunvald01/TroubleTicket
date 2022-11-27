@@ -125,8 +125,6 @@ void free_tkt_arr()
 		free(tkt_array[i].name);
 		free(tkt_array[i].problem);
 		free(tkt_array[i].status);
-		//printf("tkt_array[0].name %s", tkt_array[i].name);
-		//printf("tkt_array[0].name %s", tkt_array[i].problem);
 	}
 }
 
@@ -150,23 +148,65 @@ void process_request(char* opt)
 		create_ticket(tkt_count);
 		break;
 	case '2':
-		gotoxy(20, 16);
-		printf("** Updating existing ticket **");
-		time_delay(3);
-	   update_ticket();
-		break;
+		tkt_count++;
+		if (tkt_count >= 1 )
+		{
+			gotoxy(20, 16);
+			printf("** Updating existing ticket **");
+			time_delay(3);
+			update_ticket();
+			break;
+		}
+		else
+		{
+			gotoxy(20, 16);
+			printf("There are no existing tickets created\n");
+			printf("Need at least 1 ticket to edit\n");
+			printf("Returning to Main Menu in 3 sec");
+			time_delay(3);
+			break;
+		}
+
 	case '3':
-		gotoxy(20, 16);
-		printf("** Deleting ticket **");
-		time_delay(3);
-		delete_ticket();
-		break;
+		tkt_count++;
+		if (tkt_count >= 1)
+		{
+			gotoxy(20, 16);
+			printf("** Deleting ticket **");
+			time_delay(3);
+			delete_ticket();
+			break;
+		}
+		else
+		{
+			gotoxy(20, 16);
+			printf("There are no existing tickets created.\n");
+			printf("Need at least 1 ticket to delete\n");
+			printf("Returning to Main Menu in 3 sec");
+			time_delay(3);
+			break;
+		}
+
 	case '4':
-		gotoxy(20, 16);
-		printf("** Displaying all tickets **");
-		time_delay(3);
-		display_tickets();
-		break;
+		tkt_count++;
+		if (tkt_count >= 1)
+		{
+			gotoxy(20, 16);
+			printf("** Displaying all tickets **");
+			time_delay(3);
+			display_tickets();
+			break;
+		}
+		else
+		{
+			gotoxy(20, 16);
+			printf("There are no existing tickets created.\n");
+			printf("Need at least 1 ticket to display\n");
+			printf("Returning to Main Menu in 3 sec");
+			time_delay(3);
+			break;
+		}
+		
 	case '5':
 		gotoxy(20, 16);
 		printf("** Exiting program **\n");
